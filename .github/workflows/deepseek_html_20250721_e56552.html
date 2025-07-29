@@ -1,0 +1,2079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zantora - Grow, Profit, Success!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --purple-500: #8B5CF6;
+            --purple-600: #7C3AED;
+            --blue-500: #3B82F6;
+            --blue-600: #2563EB;
+            --cyan-400: #22D3EE;
+            --cyan-500: #06B6D4;
+            --teal-400: #2DD4BF;
+            --teal-500: #14B8A6;
+            --emerald-500: #10B981;
+            --amber-500: #F59E0B;
+            --fuchsia-500: #D946EF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-500: #6B7280;
+            --gray-700: #374151;
+            --white: #FFFFFF;
+            --black: #000000;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--gray-50);
+            color: var(--gray-700);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        /* Header styles */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 4rem;
+            padding: 0 1.5rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+            background: linear-gradient(to right, var(--purple-500), var(--cyan-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .logo-icon {
+            height: 1.5rem;
+            width: 1.5rem;
+            background: linear-gradient(to right, var(--purple-500), var(--cyan-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        nav {
+            display: none;
+        }
+        
+        nav a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--purple-600);
+        }
+        
+        .get-started-btn {
+            background-color: var(--purple-500);
+            color: white;
+            font-weight: 500;
+            padding: 0.625rem 1.5rem;
+            border-radius: 0.375rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 0.875rem;
+        }
+        
+        .get-started-btn:hover {
+            background-color: var(--purple-600);
+        }
+        
+        /* Hero section */
+        .hero {
+            background: linear-gradient(to bottom right, #F3E8FF, #DBEAFE, #CFFAFE);
+            padding: 3rem 0;
+        }
+        
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-content {
+                flex-direction: row;
+            }
+        }
+        
+        .hero-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .hero-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            line-height: 1.2;
+            background: linear-gradient(to right, var(--purple-600), var(--blue-500), var(--cyan-400));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray-500);
+            max-width: 36rem;
+        }
+        
+        .hero-cta {
+            background: linear-gradient(to right, var(--purple-600), var(--blue-500));
+            color: white;
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.25);
+        }
+        
+        .hero-cta:hover {
+            background: linear-gradient(to right, var(--purple-700), var(--blue-600));
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(59, 130, 246, 0.3);
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .hero-img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Market data section */
+        .market-data {
+            background: linear-gradient(to right, #FEF9C3, #FEF3C7);
+            padding: 1.5rem 0;
+        }
+        
+        .market-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .market-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+        
+        .bnb-price {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .bnb-icon {
+            height: 2.5rem;
+            width: 2.5rem;
+            border-radius: 9999px;
+            background: linear-gradient(to right, #FCD34D, #F59E0B);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 4px 6px rgba(245, 158, 11, 0.2);
+        }
+        
+        .bnb-text p:first-child {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+        
+        .bnb-text p:last-child {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #B45309, #D97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .market-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        @media (min-width: 640px) {
+            .market-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .stat-item p:first-child {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+        
+        .stat-item p:last-child {
+            font-size: 1.125rem;
+            font-weight: 500;
+        }
+        
+        .positive-change {
+            color: #10B981;
+        }
+        
+        /* General Section Styles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            background-color: var(--purple-500);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--purple-600), var(--blue-500), var(--cyan-400));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray-500);
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+        
+        /* About Us Section */
+        .about-us {
+            padding: 3rem 0;
+        }
+        
+        .about-us-content {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .about-us-content p {
+            margin-bottom: 1rem;
+        }
+        
+        /* How It Works Section */
+        .how-it-works {
+            padding: 3rem 0;
+            background: linear-gradient(to bottom right, #DBEAFE, white, #CFFAFE);
+        }
+        
+        .how-it-works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .work-step-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .work-step-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--purple-500), var(--cyan-500));
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .work-step-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .work-step-card p {
+            font-size: 0.95rem;
+            color: var(--gray-500);
+        }
+        
+        /* Level Ranking Section */
+        .level-ranking {
+            padding: 3rem 0;
+        }
+        
+        .level-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .level-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .level-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .level-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--purple-500), var(--blue-500));
+            color: white;
+        }
+        
+        .level-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .level-card p {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+        
+        /* Investment Plans Section */
+        .investment-plans {
+            background: linear-gradient(to bottom right, #DBEAFE, white, #CFFAFE);
+            padding: 3rem 0;
+        }
+        
+        .investment-card {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        
+        .card-top {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            background: linear-gradient(to right, var(--purple-500), var(--cyan-500));
+            color: white;
+        }
+        
+        .card-top h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        
+        .investment-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .investment-table th {
+            padding: 0.75rem 1.5rem;
+            text-align: left;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-500);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            background-color: var(--gray-50);
+        }
+        
+        .investment-table td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .investment-table tr:nth-child(even) {
+            background-color: var(--gray-50);
+        }
+        
+        /* Direct Joining Section */
+        .direct-joining {
+            padding: 3rem 0;
+        }
+        
+        .direct-joining-content {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .direct-joining-content p {
+            font-size: 1.125rem;
+            color: var(--gray-700);
+            margin-bottom: 1rem;
+        }
+        
+        .direct-joining-content .example {
+            font-style: italic;
+            color: var(--gray-500);
+            background-color: var(--gray-50);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .percentage-display {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--purple-600), var(--fuchsia-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 1rem 0;
+        }
+        
+        /* Team Building Income Section */
+        .team-building {
+            padding: 3rem 0;
+            background: linear-gradient(to bottom right, #EDE9FE, white, #F5F3FF);
+        }
+        
+        .team-building-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(to right, var(--purple-600), var(--fuchsia-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .team-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .team-card ul li {
+            margin-bottom: 0.5rem;
+            color: var(--gray-600);
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .team-card ul li::before {
+            content: "•";
+            color: var(--purple-500);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-right: 0.5rem;
+        }
+        
+        .reward-amount {
+            font-weight: 700;
+            color: var(--emerald-500);
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Salary Income Section */
+        .salary-income {
+            padding: 3rem 0;
+        }
+        
+        .salary-content {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .salary-content p {
+            font-size: 1.125rem;
+            color: var(--gray-700);
+        }
+        
+        .salary-highlight {
+            font-weight: 700;
+            background: linear-gradient(to right, var(--purple-600), var(--cyan-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Important Notice Section */
+        .important-notice {
+            padding: 2rem 0;
+            background-color: #FEF2F2;
+            border-top: 1px solid #FCA5A5;
+            border-bottom: 1px solid #FCA5A5;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .important-notice-content {
+            background-color: #FEE2E2;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            display: inline-block;
+            max-width: 800px;
+            color: #EF4444;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .notice-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* CTA section */
+        .cta {
+            background: linear-gradient(to right, var(--purple-600), var(--blue-500), var(--cyan-400));
+            padding: 4rem 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.125rem;
+            max-width: 42rem;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-btn {
+            background: white;
+            color: var(--purple-600);
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.25);
+        }
+        
+        .cta-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            background: linear-gradient(to bottom right, var(--gray-50), var(--gray-100));
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-quote {
+            font-style: italic;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--purple-600), var(--blue-500), var(--cyan-400));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.2rem;
+        }
+        
+        .footer-copyright {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        .footer-note {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin-top: 1rem;
+            padding: 0 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-style: italic;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 200;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #aaa;
+            cursor: pointer;
+        }
+        
+        .close-modal:hover {
+            color: #000;
+        }
+        
+        .modal-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .modal-header h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--purple-600), var(--blue-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus {
+            border-color: var(--purple-500);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+        }
+        
+        .modal-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(to right, var(--purple-600), var(--blue-500));
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .modal-btn:hover {
+            background: linear-gradient(to right, var(--purple-700), var(--blue-600));
+            transform: translateY(-2px);
+        }
+        
+        .switch-modal {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        
+        .switch-modal a {
+            color: var(--purple-600);
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .switch-modal a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            nav {
+                display: flex;
+                gap: 1.5rem;
+            }
+            
+            .hero {
+                padding: 6rem 0;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .about-us, .how-it-works, .level-ranking, .investment-plans, .direct-joining, .team-building, .salary-income {
+                padding: 6rem 0;
+            }
+            
+            .cta {
+                padding: 6rem 0;
+            }
+            
+            .cta-title {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .investment-table {
+                font-size: 0.85rem;
+            }
+            
+            .investment-table th, 
+            .investment-table td {
+                padding: 0.5rem;
+            }
+        }
+        
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--gray-700);
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1.5rem;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                gap: 1rem;
+            }
+            
+            nav.show {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        /* Chat Widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .chat-btn {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(to right, var(--purple-600), var(--blue-500));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .chat-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .chat-container {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            width: 350px;
+            height: 450px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 1001;
+        }
+        
+        .chat-container.active {
+            display: flex;
+            animation: slideUp 0.3s ease;
+        }
+        
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .chat-header {
+            background: linear-gradient(to right, var(--purple-600), var(--blue-500));
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chat-header h4 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: var(--gray-50);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .user-message {
+            background: linear-gradient(to right, var(--purple-500), var(--cyan-500));
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .bot-message {
+            background: white;
+            color: var(--gray-700);
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .typing-indicator {
+            display: none;
+            align-self: flex-start;
+            background: white;
+            color: var(--gray-500);
+            padding: 10px 15px;
+            border-radius: 18px;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .typing-indicator span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--gray-500);
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+        
+        .typing-indicator span:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 30px;
+            outline: none;
+            transition: all 0.3s;
+        }
+        
+        .chat-input input:focus {
+            border-color: var(--purple-500);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+        }
+        
+        .chat-input button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: var(--purple-500);
+            color: white;
+            margin-left: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .chat-input button:hover {
+            background: var(--purple-600);
+            transform: scale(1.05);
+        }
+        
+        /* WhatsApp and Telegram buttons */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(to right, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .telegram-btn {
+            position: fixed;
+            bottom: 160px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(to right, #0088cc, #004d7a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .whatsapp-btn:hover, .telegram-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Footer Columns */
+        .footer-columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 2rem;
+            padding: 0 15px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+            color: var(--gray-700);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, var(--purple-500), var(--cyan-500));
+            border-radius: 3px;
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+            color: var(--gray-600);
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--purple-500);
+            min-width: 20px;
+            font-size: 18px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(to right, var(--purple-500), var(--cyan-500));
+            color: white;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding: 1.5rem 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            color: var(--gray-600);
+            font-size: 0.875rem;
+            background: rgba(255,255,255,0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Account Modals -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('loginModal')">&times;</span>
+            <div class="modal-header">
+                <h2>Login to Zantora</h2>
+                <p>Access your account to start trading</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="modal-btn">Login</button>
+            </form>
+            <div class="switch-modal">
+                Don't have an account? <a onclick="showCreateAccountModal()">Create Account</a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="createAccountModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('createAccountModal')">&times;</span>
+            <div class="modal-header">
+                <h2>Create Zantora Account</h2>
+                <p>Join our platform to start your investment journey</p>
+            </div>
+            <form id="createAccountForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="newEmail">Email</label>
+                    <input type="email" id="newEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">Password</label>
+                    <input type="password" id="newPassword" placeholder="Create a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit" class="modal-btn">Create Account</button>
+            </form>
+            <div class="switch-modal">
+                Already have an account? <a onclick="showLoginModal()">Login</a>
+            </div>
+        </div>
+    </div>
+    
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-chart-line logo-icon"></i>
+                    <span>Zantora</span>
+                </div>
+                
+                <nav id="mainNav">
+                    <a href="#about-us">About Us</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#investment-plans">Investment Plans</a>
+                    <a href="#level-ranking">Level Ranking</a>
+                    <a href="#direct-joining">Direct Joining</a>
+                    <a href="#team-building">Team Building</a>
+                    <a href="#salary-income">Salary Income</a>
+                </nav>
+                
+                <button class="get-started-btn" onclick="showCreateAccountModal()">Create Account</button>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Grow, Profit, Success with Zantora!</h1>
+                    <p class="hero-subtitle">Your success, Our commitment. Maximize Your Profits with Zantora, a leading platform for crypto trading and investment.</p>
+                    <button class="hero-cta" onclick="showCreateAccountModal()">
+                        Start Now
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="zentora_page-0001.jpg" 
+                         alt="Trading Dashboard" 
+                         class="hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="market-data">
+        <div class="container">
+            <div class="market-content">
+                <div class="bnb-price">
+                    <div class="bnb-icon">B</div>
+                    <div class="bnb-text">
+                        <p>Current BNB Price</p>
+                        <p>$412.35</p>
+                    </div>
+                </div>
+                
+                <div class="market-stats">
+                    <div class="stat-item">
+                        <p>24h Change</p>
+                        <p class="positive-change">+2.4%</p>
+                    </div>
+                    <div class="stat-item">
+                        <p>24h Volume</p>
+                        <p>$1.2B</p>
+                    </div>
+                    <div class="stat-item">
+                        <p>Market Cap</p>
+                        <p>$67.8B</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-us" id="about-us">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">About Us</span>
+                <h2 class="section-title">Who We Are</h2>
+                <p class="section-subtitle">At Zantora, we are committed to your success in the world of crypto investment.</p>
+            </div>
+            
+            <div class="about-us-content">
+                <p>Zantora was founded in 2020 with a mission to democratize access to cryptocurrency investments. Our platform combines cutting-edge technology with user-friendly tools to help both beginners and experienced traders achieve their financial goals.</p>
+                <p>We believe that everyone should have the opportunity to participate in the digital economy. That's why we've created an ecosystem that simplifies crypto trading while providing robust tools for portfolio management and growth.</p>
+                <p>Our team of financial experts, blockchain developers, and security specialists work tirelessly to ensure that Zantora remains a safe, reliable, and profitable platform for all our users.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">How it works</span>
+                <h2 class="section-title">Simple Steps to Get Started</h2>
+                <p class="section-subtitle">Follow these easy steps to begin your journey with Zantora.</p>
+            </div>
+            
+            <div class="how-it-works-grid">
+                <div class="work-step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3>Register Account</h3>
+                    <p>Create your account to start your investment journey</p>
+                </div>
+                <div class="work-step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Verify Email</h3>
+                    <p>Verify your email address to secure your account</p>
+                </div>
+                <div class="work-step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3>Verify KYC</h3>
+                    <p>Complete KYC verification before making withdrawals</p>
+                </div>
+                <div class="work-step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Deposit Funds</h3>
+                    <p>Deposit using automatic or manual gateways (€, $)</p>
+                </div>
+                <div class="work-step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Choose Investment Plan</h3>
+                    <p>Select an investment plan to start earning profits</p>
+                </div>
+                <div class="work-step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Transfer Funds</h3>
+                    <p>Transfer funds to other users instantly</p>
+                </div>
+                <div class="work-step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Refer Friends</h3>
+                    <p>Earn bonuses by referring friends to Zantora</p>
+                </div>
+                <div class="work-step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Withdraw & Enjoy</h3>
+                    <p>Withdraw your profits to your main wallet</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="level-ranking" id="level-ranking">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Level Ranking</span>
+                <h2 class="section-title">Achieve Higher Ranks, Unlock More Benefits</h2>
+                <p class="section-subtitle">Progress through Zantora's ranking system by earning from the platform.</p>
+            </div>
+            
+            <div class="level-grid">
+                <div class="level-card">
+                    <div class="level-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Hyip Member</h3>
+                    <p>Achieved by signing up for an account</p>
+                </div>
+                <div class="level-card">
+                    <div class="level-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Nova Rank</h3>
+                    <p>Earn $25 from the platform</p>
+                </div>
+                <div class="level-card">
+                    <div class="level-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Zenith Rank</h3>
+                    <p>Earn $50 from the platform</p>
+                </div>
+                <div class="level-card">
+                    <div class="level-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3>Lyra Rank</h3>
+                    <p>Earn $100 from the platform</p>
+                </div>
+                <div class="level-card">
+                    <div class="level-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Titan Rank</h3>
+                    <p>Earn $200 from the platform</p>
+                </div>
+                <div class="level-card">
+                    <div class="level-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Astra Rank</h3>
+                    <p>Earn $250 from the platform</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- womans clothes section start -->
+      <div class="computers_section layout_padding">
+         <div class="container">
+            <h1 class="womans_taital">Deposit Your funds</h1>
+            <div class="womans_section_2">
+               <div class="row">
+                  <div class="col-md-6">
+                     <h1 class="Get_offer_text">Get <br>offer Every Trending</h1>
+                     <div class="read_bt"><a href="44 141 123 4567 ">Buy Now</a></div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="image_4"><img src="zentora_page-0014.jpg"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- womans clothes section end -->
+
+    <section class="investment-plans" id="investment-plans">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Investment Plans</span>
+                <h2 class="section-title">Our Diverse Investment Plans</h2>
+                <p class="section-subtitle">Choose a plan that suits your investment goals and start earning daily compounded income.</p>
+            </div>
+            
+            <div class="investment-card">
+                <div class="card-top">
+                    <h3>Investment Plans</h3>
+                </div>
+                
+                <div class="table-container">
+                    <table class="investment-table">
+                        <thead>
+                            <tr>
+                                <th>Plan</th>
+                                <th>Wallet Balance</th>
+                                <th>Daily Compound Income</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Plan 1</td>
+                                <td>$10 - $109</td>
+                                <td>0.9%</td>
+                            </tr>
+                            <tr>
+                                <td>Plan 2</td>
+                                <td>$110 - $249</td>
+                                <td>1.1%</td>
+                            </tr>
+                            <tr>
+                                <td>Plan 3</td>
+                                <td>$250 - $499</td>
+                                <td>1.3%</td>
+                            </tr>
+                            <tr>
+                                <td>Plan 4</td>
+                                <td>$500 - $799</td>
+                                <td>1.4%</td>
+                            </tr>
+                            <tr>
+                                <td>Plan 5</td>
+                                <td>$800 - $999</td>
+                                <td>1.5%</td>
+                            </tr>
+                            <tr>
+                                <td>Plan 6</td>
+                                <td>$1000 - $1299</td>
+                                <td>1.6%</td>
+                            </tr>
+                            <tr>
+                                <td>Plan 7</td>
+                                <td>$1300 - $1599</td>
+                                <td>1.7%</td>
+                            </tr>
+                            <tr>
+                                <td>Plan 8</td>
+                                <td>$1600 - $1999</td>
+                                <td>1.8%</td>
+                            </tr>
+                            <tr>
+                                <td>Plan 9</td>
+                                <td>$2000 - $2999</td>
+                                <td>2.5%</td>
+                            </tr>
+                            <tr>
+                                <td>Plan 10</td>
+                                <td>$3000 - $20,000</td>
+                                <td>3%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="direct-joining" id="direct-joining">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Direct Joining Income</span>
+                <h2 class="section-title">Earn from Direct Referrals</h2>
+                <p class="section-subtitle">Get a percentage of the deposit from users you directly refer to Zantora.</p>
+            </div>
+            
+            <div class="direct-joining-content">
+                <div class="percentage-display">10%</div>
+                <p>Earn 10% of every deposit made by users you refer directly</p>
+                <div class="example">Example: When a referral deposits $100, you earn $10</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-building" id="team-building">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Team Building Income</span>
+                <h2 class="section-title">Build Your Team, Boost Your Earnings</h2>
+                <p class="section-subtitle">Earn rewards as your team grows and achieves sales milestones.</p>
+            </div>
+            
+            <div class="team-building-grid">
+                <div class="team-card">
+                    <h3>Level 1</h3>
+                    <ul>
+                        <li>Self deposit: $100</li>
+                        <li>Direct referrals: 3</li>
+                        <li>Team sales: $1000</li>
+                    </ul>
+                    <div class="reward-amount">Reward: $25</div>
+                </div>
+                <div class="team-card">
+                    <h3>Level 2</h3>
+                    <ul>
+                        <li>Self deposit: $250</li>
+                        <li>Direct referrals: 6</li>
+                        <li>Team sales: $2000</li>
+                        <li>Minimum team members: 9</li>
+                    </ul>
+                    <div class="reward-amount">Reward: $50</div>
+                </div>
+                <div class="team-card">
+                    <h3>Level 3</h3>
+                    <ul>
+                        <li>Self deposit: $500</li>
+                        <li>Direct referrals: 9</li>
+                        <li>Team sales: $3000</li>
+                        <li>Team members: 27</li>
+                    </ul>
+                    <div class="reward-amount">Reward: $100</div>
+                </div>
+                <div class="team-card">
+                    <h3>Level 4</h3>
+                    <ul>
+                        <li>Self deposit: $750</li>
+                        <li>Direct referrals: 12</li>
+                        <li>Team sales: $5000</li>
+                        <li>Team members: 50</li>
+                    </ul>
+                    <div class="reward-amount">Reward: $200</div>
+                </div>
+                <div class="team-card">
+                    <h3>Level 5</h3>
+                    <ul>
+                        <li>Self deposit: $1000</li>
+                        <li>Direct referrals: 15</li>
+                        <li>Team sales: $7000</li>
+                        <li>Team members: 100</li>
+                    </ul>
+                    <div class="reward-amount">Reward: $250</div>
+                </div>
+                <div class="team-card">
+                    <h3>Level 6</h3>
+                    <ul>
+                        <li>Self deposit: $1250</li>
+                        <li>Direct referrals: 18</li>
+                        <li>Team sales: $9000</li>
+                        <li>Team members: 200</li>
+                    </ul>
+                    <div class="reward-amount">Reward: $500</div>
+                </div>
+                <div class="team-card">
+                    <h3>Level 7</h3>
+                    <ul>
+                        <li>Self deposit: $1500</li>
+                        <li>Direct referrals: 21</li>
+                        <li>Team sales: $11000</li>
+                        <li>Team members: 400</li>
+                    </ul>
+                    <div class="reward-amount">Reward: $1000</div>
+                </div>
+                <div class="team-card">
+                    <h3>Level 8</h3>
+                    <ul>
+                        <li>Self deposit: $1800</li>
+                        <li>Direct referrals: 24</li>
+                        <li>Team sales: $15000</li>
+                        <li>Team members: 800</li>
+                    </ul>
+                    <div class="reward-amount">Reward: $1500</div>
+                </div>
+                <div class="team-card">
+                    <h3>Level 9</h3>
+                    <ul>
+                        <li>Self deposit: $2050</li>
+                        <li>Direct referrals: 27</li>
+                        <li>Team sales: $20,000</li>
+                        <li>Team members: 1500</li>
+                    </ul>
+                    <div class="reward-amount">Reward: $2000</div>
+                </div>
+                <div class="team-card">
+                    <h3>Level 10</h3>
+                    <ul>
+                        <li>Self deposit: $2500</li>
+                        <li>Direct referrals: 30</li>
+                        <li>Team sales: $30,000</li>
+                        <li>Team members: 3200</li>
+                    </ul>
+                    <div class="reward-amount">Reward: $2500</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="salary-income" id="salary-income">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Salary Income</span>
+                <h2 class="section-title">Earn Monthly Salary</h2>
+                <p class="section-subtitle">Achieve specific goals to earn a steady monthly salary from Zantora.</p>
+            </div>
+            
+            <div class="salary-content">
+                <p>Maintain a wallet balance of <span class="salary-highlight">$200</span> and refer at least <span class="salary-highlight">10 direct users</span> each month to earn a <span class="salary-highlight">$60 salary</span> plus a <span class="salary-highlight">$20 bonus</span>.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="important-notice">
+        <div class="container">
+            <div class="important-notice-content">
+                <div class="notice-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <strong>IMPORTANT NOTICE!</strong> <br>
+                Log in to only one account per mobile device. Logging in to a second account will result in permanent suspension.
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta-title">Ready to Start Earning?</h2>
+            <p class="cta-subtitle">Join thousands of investors who are already profiting with Zantora.</p>
+            <button class="cta-btn" onclick="showCreateAccountModal()">Create Account</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <div class="logo">
+                    <i class="fas fa-chart-line logo-icon"></i>
+                    <span>Zantora</span>
+                </div>
+                <p class="footer-quote">"Grow, Profit, Success! Your success, Our commitment."</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about-us">About Us</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#investment-plans">Investment Plans</a></li>
+                    <li><a href="#level-ranking">Level Ranking</a></li>
+                    <li><a href="#direct-joining">Direct Joining</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">Market Analysis</a></li>
+                    <li><a href="#">Investment Guide</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> Zentora Headquarters (UK Office)  
+Zenrola Business Hub  
+45 West Regent Street  
+3rd Floor, Suite 302  
+Glasgow, G2 2RA  
+Scotland, United Kingdom
+</p>
+                    <p><i class="fas fa-phone"></i> +44 141 123 4567
+</p>
+                    <p><i class="fas fa-envelope"></i> info@zentora.co.uk </p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM (GMT)</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2025 Zantora. All rights reserved.</p>
+                <p class="footer-note">Note: Every person who is smart and sensible should first understand and learn the system well before starting.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-btn" id="chat-btn">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-container" id="chat-container">
+            <div class="chat-header">
+                <h4>Zantora AI Support</h4>
+                <button class="close-chat" id="close-chat"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">
+                    Hello! I'm Zara, your Zantora AI assistant. How can I help you today? 😊
+                </div>
+            </div>
+            <div class="typing-indicator" id="typing-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Type your message...">
+                <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp and Telegram Buttons -->
+    <a href="https://wa.me/44 141 123 4567 " target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <a href="https://wa.me/44 141 123 4567 " target="_blank" class="telegram-btn">
+        <i class="fab fa-telegram-plane"></i>
+    </a>
+
+    <script>
+        // Modal functions
+        function showLoginModal() {
+            closeModal('createAccountModal');
+            document.getElementById('loginModal').style.display = 'block';
+        }
+        
+        function showCreateAccountModal() {
+            closeModal('loginModal');
+            document.getElementById('createAccountModal').style.display = 'block';
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+        
+        // Handle form submissions
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Get form values
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // In a real app, you would send this to your server
+            alert(`Login attempted with:\nEmail: ${email}\nPassword: ${password}`);
+            closeModal('loginModal');
+        });
+        
+        document.getElementById('createAccountForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Get form values
+            const fullName = document.getElementById('fullName').value;
+            const newEmail = document.getElementById('newEmail').value;
+            const newPassword = document.getElementById('newPassword').value;
+            
+            // In a real app, you would send this to your server
+            alert(`Account created successfully for ${fullName}!\nEmail: ${newEmail}`);
+            closeModal('createAccountModal');
+        });
+        
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('show');
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu after clicking
+                const nav = document.getElementById('mainNav');
+                nav.classList.remove('show');
+            });
+        });
+        
+        // Update market data dynamically
+        function updateMarketData() {
+            const changeElement = document.querySelector('.positive-change');
+            const priceElement = document.querySelector('.bnb-text p:last-child');
+            
+            // Simulate price fluctuation
+            const currentPrice = parseFloat(priceElement.textContent.replace('$', ''));
+            const randomChange = (Math.random() * 0.5) - 0.25; // Random change between -0.25% and +0.25%
+            const newPrice = currentPrice * (1 + randomChange / 100);
+            
+            priceElement.textContent = '$' + newPrice.toFixed(2);
+            
+            // Update change indicator
+            if (randomChange >= 0) {
+                changeElement.textContent = '+' + randomChange.toFixed(2) + '%';
+                changeElement.className = 'positive-change';
+            } else {
+                changeElement.textContent = randomChange.toFixed(2) + '%';
+                changeElement.className = '';
+            }
+        }
+        
+        // Update market data every 10 seconds
+        setInterval(updateMarketData, 10000);
+        
+        // Add hover effects to cards
+        const cards = document.querySelectorAll('.work-step-card, .level-card, .team-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.05)';
+            });
+        });
+        
+        // Chat Widget Functionality
+        const chatBtn = document.getElementById('chat-btn');
+        const closeChat = document.getElementById('close-chat');
+        const chatContainer = document.getElementById('chat-container');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+        const chatMessages = document.getElementById('chat-messages');
+        const typingIndicator = document.getElementById('typing-indicator');
+        
+        // Toggle chat container
+        chatBtn.addEventListener('click', () => {
+            chatContainer.classList.toggle('active');
+        });
+        
+        closeChat.addEventListener('click', () => {
+            chatContainer.classList.remove('active');
+        });
+        
+        // Add a message to the chat
+        function addMessage(message, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
+            messageDiv.textContent = message;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        // Show typing indicator
+        function showTypingIndicator() {
+            typingIndicator.style.display = 'flex';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        // Hide typing indicator
+        function hideTypingIndicator() {
+            typingIndicator.style.display = 'none';
+        }
+        
+        // AI Response System
+        function generateAIResponse(userMessage) {
+            // Convert to lowercase for easier matching
+            const msg = userMessage.toLowerCase();
+            
+            // Response patterns
+            const responses = {
+                greeting: ["Hello! How can I assist you today? 😊", "Hi there! How can I help?", "Welcome to Zantora support! How can I assist you?"],
+                help: ["We'd be happy to help! What specific issue are you facing?", "I'm here to help. Can you describe your issue in more detail?", "Sure, I can assist with that. What do you need help with?"],
+                account: ["For account issues, please make sure you've verified your email and completed KYC verification. You can also try resetting your password from the login page.", "Account issues are usually resolved by verifying your email and completing KYC. If you're still having trouble, contact support@zantora.com."],
+                investment: ["We offer various investment plans from $10 to $20,000 with daily returns. Which plan are you interested in?", "Our investment plans range from 0.9% to 3% daily compound interest. You can find all plans on our Investment Plans page."],
+                withdrawal: ["Withdrawals typically take 24-48 hours to process after KYC verification. Make sure you've completed all verification steps.", "Withdrawal issues are often related to incomplete KYC. Please ensure all your documents are verified."],
+                referral: ["You earn 10% from direct referrals and additional bonuses through our team building program. Check the Direct Joining and Team Building sections for details.", "Referral income comes from direct sign-ups and team building achievements. The more you refer, the more you earn!"],
+                support: ["For direct support, you can email us at support@zantora.com or use our WhatsApp/Telegram links in the bottom right.", "Our support team is available Mon-Fri from 9AM-6PM GMT. You can reach us via email or the contact buttons below."],
+                default: ["I'm still learning, but I can connect you with a human agent if you'd like!", "I'm not sure I understand. Could you rephrase your question?", "I'm an AI assistant and may not have all answers. Would you like me to connect you with our support team?"]
+            };
+            
+            // Determine response based on keywords
+            if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey')) {
+                return responses.greeting[Math.floor(Math.random() * responses.greeting.length)];
+            }
+            if (msg.includes('help') || msg.includes('support') || msg.includes('issue')) {
+                return responses.help[Math.floor(Math.random() * responses.help.length)];
+            }
+            if (msg.includes('account') || msg.includes('login') || msg.includes('sign in')) {
+                return responses.account[Math.floor(Math.random() * responses.account.length)];
+            }
+            if (msg.includes('invest') || msg.includes('plan') || msg.includes('deposit')) {
+                return responses.investment[Math.floor(Math.random() * responses.investment.length)];
+            }
+            if (msg.includes('withdraw') || msg.includes('cash out') || msg.includes('payout')) {
+                return responses.withdrawal[Math.floor(Math.random() * responses.withdrawal.length)];
+            }
+            if (msg.includes('refer') || msg.includes('team') || msg.includes('downline')) {
+                return responses.referral[Math.floor(Math.random() * responses.referral.length)];
+            }
+            if (msg.includes('contact') || msg.includes('email') || msg.includes('phone')) {
+                return responses.support[Math.floor(Math.random() * responses.support.length)];
+            }
+            
+            return responses.default[Math.floor(Math.random() * responses.default.length)];
+        }
+        
+        // Handle user message submission
+        function handleUserMessage() {
+            const message = userInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                userInput.value = '';
+                
+                // Show typing indicator
+                showTypingIndicator();
+                
+                // Simulate AI response after a short delay
+                setTimeout(() => {
+                    hideTypingIndicator();
+                    const aiResponse = generateAIResponse(message);
+                    addMessage(aiResponse);
+                }, 1500);
+            }
+        }
+        
+        // Event listeners for sending messages
+        sendBtn.addEventListener('click', handleUserMessage);
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleUserMessage();
+            }
+        });
+        
+        // Auto open chat after 30 seconds
+        setTimeout(() => {
+            if (!chatContainer.classList.contains('active')) {
+                chatContainer.classList.add('active');
+                addMessage("Hi there! 👋 I'm Zara, your Zantora AI assistant. Do you have any questions about our platform?", false);
+            }
+        }, 30000);
+    </script>
+</body>
+</html>
